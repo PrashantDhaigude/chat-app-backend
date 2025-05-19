@@ -26,9 +26,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(fileUpload());
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
-
+const MongoDBSting = "mongodb+srv://prashantdhaigude530:6Qm0NdPwjKHGLzv0@chatapplication.jrene.mongodb.net/?retryWrites=true&w=majority&appName=chatapplication"
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(MongoDBSting)
   .then(() => console.log("✅ MongoDB Connected Successfully!"))
   .catch((err) => console.error("❌ MongoDB Connection Failed:", err));
 
